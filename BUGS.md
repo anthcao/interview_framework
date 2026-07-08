@@ -76,7 +76,7 @@ The First Name input should be highlighted in red and display a validation error
 Actual Result:
 The Last Name error message appears, and does not show the expected red invalid-state styling rather a green styling is applied to the textbox.
 
-### Checkout accepts non-alphanumeric postal code input
+### Checkout accepts non-alphanumeric input
 
 Summary:
 The checkout form accepts non-alphanumeric characters
@@ -97,7 +97,7 @@ Steps to Reproduce:
 4. Click "Continue".
 
 Expected Result:
-The checkout form should reject non-alphanumeric postal code input and display a validation error.
+The checkout form should reject non-alphanumeric input and display a validation error.
 
 Actual Result:
 The checkout form accepts the invalid input and allows the user to proceed.
