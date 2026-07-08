@@ -5,7 +5,7 @@ import { expect } from '@wdio/globals';
 
 const standardUser = getUser('swift_tester');
 
-describe('Products Page Test', () => {
+describe('Products Page Tests', () => {
     beforeEach(async () => {
         await LoginPage.open();
 

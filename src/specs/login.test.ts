@@ -7,7 +7,7 @@ const acceptedUsers = users.filter(user => user.acceptedUser);
 const lockedUser = getUser('vault_locked');
 const invalidUser = getUser('invalid_user');
 
-describe('Navigate and Login to the Application', () => {
+describe('Login Page Tests', () => {
     it('Verify login success for all accepted users', async () => {
         for (const user of acceptedUsers) {
             await LoginPage.open();
