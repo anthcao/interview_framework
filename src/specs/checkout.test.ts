@@ -1,11 +1,8 @@
 import ProductPage from '../pages/productPage';
-import LoginPage from '../pages/loginPage';
 import CartPage from '../pages/cartPage';
 import CheckoutPage from '../pages/checkoutPage';
-import { getUser } from '../data/users';
 import { expect } from '@wdio/globals';
-
-const standardUser = getUser('swift_tester');
+import { loginUser } from '../data/helper';
 
 const productsToAdd = [
     { index: 0, quantity: 2, name: 'Automation Handbook' },
@@ -15,18 +12,7 @@ const productsToAdd = [
 
 describe('Checkout Page Tests', () => {
     beforeEach(async () => {
-        await LoginPage.open();
-
-        await LoginPage.login(
-            standardUser.username,
-            standardUser.password
-        );
-
-        const url = await browser.getUrl();
-        expect(url).toContain(ProductPage.url);
-
-        await expect(ProductPage.loggedInUser).toBeDisplayed();
-        await expect(ProductPage.loggedInUser).toHaveText(standardUser.username);
+        await loginUser('swift_tester');;
 
         await ProductPage.addMultipleProductsToCart(productsToAdd);
         await ProductPage.cartButton.click();

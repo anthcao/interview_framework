@@ -1,25 +1,11 @@
 import ProductPage from '../pages/productPage';
-import LoginPage from '../pages/loginPage';
 import CartPage from '../pages/cartPage';
-import { getUser } from '../data/users';
 import { expect } from '@wdio/globals';
-
-const standardUser = getUser('swift_tester');
+import { loginUser } from '../data/helper';
 
 describe('Cart Page Tests', () => {
     beforeEach(async () => {
-        await LoginPage.open();
-
-        await LoginPage.login(
-            standardUser.username,
-            standardUser.password
-        );
-
-        const url = await browser.getUrl();
-        expect(url).toContain(ProductPage.url);
-
-        await expect(ProductPage.loggedInUser).toBeDisplayed();
-        await expect(ProductPage.loggedInUser).toHaveText(standardUser.username);
+        await loginUser('swift_tester');
     });
 
     it('Verify initial empty cart state', async () => {
