@@ -15,13 +15,13 @@ Preconditions:
 - Users are NOT locked out or in an error state
 
 Steps:
-1. For each accepted user in the user dataset:
-   - Navigate to the login page
-   - Enter the user's username in the username field
-   - Enter the user's password in the password field
-   - Click the Login button
-   - Verify the current URL contains the products page URL
-   - Verify the relevant username is displayed in the banner
+For each accepted user in the user dataset:
+1. Navigate to the login page
+2. Enter the user's username in the username field
+3. Enter the user's password in the password field
+4. Click the Login button
+5. Verify the current URL contains the products page URL
+6. Verify the relevant username is displayed in the banner
 
 Expected Results:
 - All accepted users should successfully log in
