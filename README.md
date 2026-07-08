@@ -36,3 +36,7 @@ npm run wdio
 ```
 
 This command will start the WebdriverIO test runner, which will execute the spec files located in the `src/specs` directory.
+
+## Test Cases Documentation
+
+Test cases and their documentation are found in the `TESTCASES.md` file
