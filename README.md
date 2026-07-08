@@ -37,6 +37,16 @@ npm run wdio
 
 This command will start the WebdriverIO test runner, which will execute the spec files located in the `src/specs` directory.
 
+## Test Framework Structure
+
+I've placed environment variables into a `environments.ts` file, and into a "qa" section so that tests can grab the relevant data and links can be changed depending on use case and version. 
+
+Page object files have been created for each encountered page and are placed into a `pages` folder and each extends a base page object. 
+
+Tests files have been created based on test cases and are placed into a `specs` folder. 
+
+I've chosen not to chain the tests together and instead keep them seperate to allow parallel execution, running the tests using the above command will be similar to chaining them but we get the benefit of isolated testing.
+
 ## Test Cases Documentation
 
 Test cases and their documentation are found in the `TESTCASES.md` file
