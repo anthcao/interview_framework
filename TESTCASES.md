@@ -8,11 +8,10 @@ This document contains detailed written test cases for all automated tests in th
 **Test Case 1: Verify login success for all accepted users**
 
 Description:
-Validate that all accepted users (standard users) can successfully log into the application and are redirected to the products page with their username displayed.
+Validate that all accepted users can successfully log into the application and are redirected to the products page with their username displayed.
 
 Preconditions:
-- Application is accessible and loads the login page
-- Test data contains multiple accepted users with valid credentials (standard_user, locked_user, problem_user, performance_glitch_user, etc.)
+- Test data contains accepted users with valid credentials
 - Users are NOT locked out or in an error state
 
 Steps:
@@ -22,13 +21,12 @@ Steps:
    - Enter the user's password in the password field
    - Click the Login button
    - Verify the current URL contains the products page URL
-   - Verify the "logged in user" element is displayed
-   - Verify the "logged in user" element displays the correct username
+   - Verify the relevant username is displayed in the banner
 
 Expected Results:
 - All accepted users should successfully log in
-- Page redirects to the products page (URL contains /inventory.html)
-- The username is displayed in the interface after login
+- Page redirects to the products page
+- The username is displayed in the banner after login
 - No error messages appear during or after login
 
 
@@ -36,12 +34,11 @@ Expected Results:
 **Test Case 2: Verify login failure with a locked user**
 
 Description:
-Validate that a user account that has been locked out cannot log in and receives an appropriate error message.
+Validate that a locked user cannot log in and receives an appropriate error message.
 
 Preconditions:
-- Application is accessible and loads the login page
-- A user account exists that is marked as locked (vault_locked user)
-- This user has valid credentials but a locked account status
+- A user account exists that is marked as locked
+- This user has valid credentials but is locked
 
 Steps:
 1. Navigate to the login page
@@ -49,7 +46,6 @@ Steps:
 3. Enter the locked user's password in the password field
 4. Click the Login button
 5. Verify an error message element is displayed on the page
-6. Verify the error message contains the text: "Epic sadface below — Sorry, this user has been locked out."
 
 Expected Results:
 - Login fails and user remains on the login page
@@ -65,7 +61,6 @@ Description:
 Validate that attempting to log in with a username and password combination that does not exist in the system fails with an appropriate error message.
 
 Preconditions:
-- Application is accessible and loads the login page
 - Invalid user credentials exist in the test data that represent non-existent users
 
 Steps:
@@ -74,11 +69,10 @@ Steps:
 3. Enter the invalid user's password in the password field
 4. Click the Login button
 5. Verify an error message element is displayed on the page
-6. Verify the error message contains the text: "Epic sadface below — Username and password do not match any user in this service"
 
 Expected Results:
 - Login fails and user remains on the login page
-- Error message is displayed with the exact text about username and password mismatch
+- Error message is displayed about the username and password mismatch
 - User is not redirected to the products page
 - Session/authentication is not established
 
@@ -116,6 +110,8 @@ Preconditions:
 - User is logged in with valid credentials
 - Products page is displayed with category filters available
 - No custom filters or sorting currently applied
+- Products have categories assigned
+
 
 Steps:
 1. Dynamically retrieve all available product categories from the page
@@ -136,7 +132,7 @@ Expected Results:
 **Test Case 6: Verify sorting products by name from A to Z**
 
 Description:
-Validate that products are correctly sorted alphabetically in ascending order (A to Z) when the name ascending sort option is selected.
+Validate that products are correctly sorted alphabetically in ascending order when the name ascending sort option is selected.
 
 Preconditions:
 - User is logged in with valid credentials
@@ -161,7 +157,7 @@ Expected Results:
 **Test Case 7: Verify sorting products by name from Z to A**
 
 Description:
-Validate that products are correctly sorted alphabetically in descending order (Z to A) when the name descending sort option is selected.
+Validate that products are correctly sorted alphabetically in descending order when the name descending sort option is selected.
 
 Preconditions:
 - User is logged in with valid credentials
@@ -186,7 +182,7 @@ Expected Results:
 **Test Case 8: Verify sorting products by price from low to high**
 
 Description:
-Validate that products are correctly sorted by price in ascending order (low to high) when the price ascending sort option is selected.
+Validate that products are correctly sorted by price in ascending order when the price ascending sort option is selected.
 
 Preconditions:
 - User is logged in with valid credentials
@@ -211,7 +207,7 @@ Expected Results:
 **Test Case 9: Verify sorting products by price from high to low (SKIPPED - Known Bug)**
 
 Description:
-Validate that products are correctly sorted by price in descending order (high to low) when the price descending sort option is selected.
+Validate that products are correctly sorted by price in descending order when the price descending sort option is selected.
 
 Preconditions:
 - User is logged in with valid credentials
