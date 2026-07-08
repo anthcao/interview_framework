@@ -40,3 +40,8 @@ This command will start the WebdriverIO test runner, which will execute the spec
 ## Test Cases Documentation
 
 Test cases and their documentation are found in the `TESTCASES.md` file
+
+## Bug Reports 
+
+Bug reports are found in the `BUGS.md` file
+
