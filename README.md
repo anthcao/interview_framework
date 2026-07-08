@@ -41,6 +41,8 @@ This command will start the WebdriverIO test runner, which will execute the spec
 
 I've placed environment variables into a `environments.ts` file, and into a "qa" section so that tests can grab the relevant data and links can be changed depending on use case and version. 
 
+A helper file `helper.ts` exists so that reusable functions can be accessed by any test. 
+
 Page object files have been created for each encountered page and are placed into a `pages` folder and each extends a base page object. 
 
 Tests files have been created based on test cases and are placed into a `specs` folder. 
