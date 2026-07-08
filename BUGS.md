@@ -19,19 +19,19 @@ Steps to Reproduce:
 4. Check the cart badge or cart page.
 
 Expected Result:
-The Bolt T-Shirt should be added to the cart, and the cart badge/count should update accordingly.
+The Bolt T-Shirt should be added to the cart, and the cart badge should update accordingly.
 
 Actual Result:
 The Bolt T-Shirt is not added to the cart.
 
-### Cart navigation is not underlined and UI shifts
+### Cart Icon is not underlined and UI shifts
 
 Summary:
-The Cart navigation item does not show the expected underline styling, and the UI shifts during interaction.
+The Cart icon does not get underlined when on the cart page, and the UI shifts during interaction.
 
 Environment:
 - Browser: Chrome
-- Page: All pages
+- Page: Cart
 - User: swift_tester
 
 Preconditions:
@@ -40,9 +40,8 @@ Preconditions:
 
 Steps to Reproduce:
 1. Login as a valid user.
-2. Observe the header navigation.
-3. Hover over or click the Cart navigation item.
-4. Observe the styling and page layout.
+2. Hover over or click the Cart icon.
+3. Observe the styling and page layout.
 
 Expected Result:
 The Cart icon should now be underlined, and the banner UI should remain stable without shifts.
@@ -106,19 +105,19 @@ The checkout form accepts the invalid input and allows the user to proceed.
 ### Login error message or styling is incorrect
 
 Summary:
-When giving a incorrect or empty password the incorrect user name error appears
+When giving an empty password the incorrect user name error appears
 
 Environment:
 - Browser: Chrome
 - Page: Login
-- User: Any
+- User: N/A
 
 Preconditions:
 - User is on the Login page.
 
 Steps to Reproduce:
 1. Navigate to the Login page.
-2. Enter username and either a empty or invalid password
+2. Enter any username and an empty password
 3. Click "Login".
 4. Observe the error message.
 
@@ -126,7 +125,7 @@ Expected Result:
 Password error message should appear on the login page
 
 Actual Result:
-Username error message should appear on the login page
+Username error message appears on the login page
 
 
 ### Logout button is not shown as clickable
@@ -136,23 +135,22 @@ The Logout button does not visually indicate that it is clickable.
 
 Environment:
 - Browser: Chrome
-- Page: Header / Navigation
+- Page: Any
 - User: swift_tester
 
 Preconditions:
 - User is logged in successfully.
-- User is on the Products page.
+- User is on any page.
 
 Steps to Reproduce:
 1. Login with a valid user.
-2. Observe the Logout button in the header.
 3. Hover over the Logout button.
 
 Expected Result:
-The Logout button should visually indicate clickability, such as showing a pointer cursor, hover state, underline, or color change.
+The Logout button should show it is clickable.
 
 Actual Result:
-The Logout button does not clearly appear clickable.
+The Logout button does not should show it is clickable.
 
 ### Sorting price high to low fails
 
@@ -167,6 +165,7 @@ Environment:
 Preconditions:
 - User is logged in successfully.
 - User is on the Products page.
+- Products with varied prices exist
 
 Steps to Reproduce:
 1. Navigate to the Products page.
